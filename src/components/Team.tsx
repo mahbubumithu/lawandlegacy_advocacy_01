@@ -16,20 +16,21 @@ const teamMembers = [
     experience: "17+ years in litigation and corporate advisory",
     specialization: "Civil, Criminal, Constitutional, High-Stakes Litigation",
   },
-  {
-    name: "Nazibul Islam",
-    role: "Associate & Founding Member",
-    credentials: "Advocate, Supreme Court of Bangladesh",
-    education: "LL.M. & LL.B. (Hon's), Jagannath University",
-    specialization: "Civil & Criminal Law, Constitutional Matters, Labour Law",
-  },
-  {
+    {
     name: "Neshatul Islam",
     role: "Associate",
     credentials: "Advocate",
     education: "LL.B (Hon's) & LL.M, Dhaka International University",
     specialization: "Corporate Law, Securities, Company Formation, Intellectual Property",
   },
+  {
+    name: "Nazibul Islam",
+    role: "Associate",
+    credentials: "Advocate, Supreme Court of Bangladesh",
+    education: "LL.M. & LL.B. (Hon's), Jagannath University",
+    specialization: "Civil & Criminal Law, Constitutional Matters, Labour Law",
+  },
+
   {
     name: "Samir Chakrabarty",
     role: "Associate",
