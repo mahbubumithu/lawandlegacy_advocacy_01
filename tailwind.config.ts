@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      spacing: {
+        "25": "6.25rem", // New custom spacing for w-25 and h-25 (100px)
+      },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

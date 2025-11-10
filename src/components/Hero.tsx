@@ -14,11 +14,11 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="flex justify-center mb-6">
             <div className="bg-gold/10 p-4 rounded-full border-2 border-gold">
-              <Scale className="w-12 h-12 text-gold" />
+              <Scale className="w-20 h-20 text-gold" />
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground leading-tight">
             Law & Legacy
           </h1>
           
@@ -40,14 +40,7 @@ export const Hero = () => {
             >
               Get Legal Consultation
             </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection("about")}
-              className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-base font-medium"
-            >
-              Learn More
-            </Button>
+
           </div>
         </div>
       </div>

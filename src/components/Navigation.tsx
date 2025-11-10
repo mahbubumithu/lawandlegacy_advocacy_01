@@ -41,15 +41,23 @@ export const Navigation = () => {
             onClick={() => scrollToSection("hero")}
             className="flex items-center gap-3 group"
           >
-            <div className={`p-2 rounded-lg transition-colors ${
-              isScrolled ? "bg-gold/10" : "bg-gold/20"
-            }`}>
-              <Scale className="w-6 h-6 text-gold" />
+
+            {/* START: Custom Logo Image */}
+            <div className="w-25 h-25 flex items-center justify-center p-0">
+              <img 
+                src="/logo.png" 
+                alt="Law & Legacy Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
+            {/* END: Custom Logo Image */}
+
+
+
             <span className={`text-xl font-bold transition-colors ${
               isScrolled ? "text-foreground" : "text-primary-foreground"
             }`}>
-              Law & Legacy
+            {/*  Law & Legacy M */}
             </span>
           </button>
           

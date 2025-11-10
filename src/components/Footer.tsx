@@ -61,7 +61,7 @@ export const Footer = () => {
           <div className="text-center text-primary-foreground/60 text-sm">
             <p>&copy; {new Date().getFullYear()} Law & Legacy. All rights reserved.</p>
             <p className="mt-2">
-              Advocates of Supreme Court of Bangladesh | Providing Legal Excellence Since Inception
+              Designed By | <a href="https://www.linkedin.com/in/mahbubumithu/" className="hover:text-gold transition-colors">Mahbub Mithu</a>
             </p>
           </div>
         </div>
