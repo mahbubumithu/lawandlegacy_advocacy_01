@@ -70,6 +70,10 @@ export const Contact = () => {
                     <Phone className="w-6 h-6 text-gold" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">Phone</h3>
+                  {/* 📞 INSERT PHONE NUMBER HERE */}
+                  <a href="tel:+8801711XXXXXXX" className="text-foreground hover:text-gold transition-colors font-medium">
+                    +880 1716 32 8898
+                  </a>
                   <p className="text-muted-foreground text-sm">
                     Available during office hours
                   </p>
@@ -80,6 +84,10 @@ export const Contact = () => {
                     <Mail className="w-6 h-6 text-gold" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">Email</h3>
+                  {/* 📧 INSERT EMAIL ADDRESS HERE */}
+                  <a href="mailto:contact@lawandlegacy.com" className="text-foreground hover:text-gold transition-colors font-medium">
+                    info@lawandlegacy.com.bd
+                  </a>
                   <p className="text-muted-foreground text-sm">
                     Send us your inquiry
                   </p>

@@ -7,10 +7,16 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-gold/20 p-2 rounded-lg">
-                <Scale className="w-6 h-6 text-gold" />
+              {/* Updated logo size to w-8 h-8 */}
+              <div className="w-30 h-30 flex items-center justify-center p-0">
+                <img 
+                  src="/logo.png" 
+                  alt="Law & Legacy Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <h3 className="text-2xl font-bold">Law & Legacy</h3>
+
+              <h3 className="text-2xl font-bold"></h3>
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               A pre-eminent law firm providing comprehensive legal services across Bangladesh. 
