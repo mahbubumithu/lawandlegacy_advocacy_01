@@ -79,7 +79,7 @@ export const Navigation = () => {
             {navLinks.map((link) => (
               <button
                 key={link.href}
-                onClick={() => scrollToSection(link.href)}
+                onClick={() => handleNavClick(link)}
                 className={`font-medium transition-colors hover:text-gold ${
                   isScrolled ? "text-foreground" : "text-primary-foreground"
                 }`}
