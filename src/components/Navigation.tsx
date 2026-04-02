@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Scale, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,9 +17,18 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (link: { href: string; isPage?: boolean }) => {
     setIsMobileMenuOpen(false);
+    if (link.isPage) {
+      navigate(`/${link.href}`);
+    } else if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(link.href)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document.getElementById(link.href)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const navLinks = [
@@ -24,6 +36,7 @@ export const Navigation = () => {
     { label: "Practice Areas", href: "practice-areas" },
     { label: "Our Team", href: "team" },
     { label: "Clients", href: "clients" },
+    { label: "News", href: "news", isPage: true },
     { label: "Contact", href: "contact" },
   ];
 
@@ -38,7 +51,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <button 
-            onClick={() => scrollToSection("hero")}
+            onClick={() => handleNavClick({ href: "hero" })}
             className="flex items-center gap-3 group"
           >
 
@@ -66,7 +79,7 @@ export const Navigation = () => {
             {navLinks.map((link) => (
               <button
                 key={link.href}
-                onClick={() => scrollToSection(link.href)}
+                onClick={() => handleNavClick(link)}
                 className={`font-medium transition-colors hover:text-gold ${
                   isScrolled ? "text-foreground" : "text-primary-foreground"
                 }`}
@@ -97,7 +110,7 @@ export const Navigation = () => {
             {navLinks.map((link) => (
               <button
                 key={link.href}
-                onClick={() => scrollToSection(link.href)}
+                onClick={() => handleNavClick(link)}
                 className="block w-full text-left px-4 py-2 text-foreground hover:bg-muted hover:text-gold transition-colors"
               >
                 {link.label}
