@@ -15,7 +15,15 @@ import { Link } from "react-router-dom";
 const AdminEvents = () => {
   const { toast } = useToast();
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    if (sessionStorage.getItem("admin_authenticated") !== "true") {
+      navigate("/admin/login", { replace: true });
+    }
+  }, [navigate]);
+
   const [description, setDescription] = useState("");
   const [eventUrl, setEventUrl] = useState("");
   const [imageUrl, setImageUrl] = useState("");
