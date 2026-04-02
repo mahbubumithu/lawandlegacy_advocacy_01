@@ -110,7 +110,7 @@ export const Navigation = () => {
             {navLinks.map((link) => (
               <button
                 key={link.href}
-                onClick={() => scrollToSection(link.href)}
+                onClick={() => handleNavClick(link)}
                 className="block w-full text-left px-4 py-2 text-foreground hover:bg-muted hover:text-gold transition-colors"
               >
                 {link.label}
