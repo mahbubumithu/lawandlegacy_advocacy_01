@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Navigation } from "@/components/Navigation";
@@ -14,7 +15,15 @@ import { Link } from "react-router-dom";
 const AdminEvents = () => {
   const { toast } = useToast();
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    if (sessionStorage.getItem("admin_authenticated") !== "true") {
+      navigate("/admin/login", { replace: true });
+    }
+  }, [navigate]);
+
   const [description, setDescription] = useState("");
   const [eventUrl, setEventUrl] = useState("");
   const [imageUrl, setImageUrl] = useState("");
