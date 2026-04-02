@@ -24,6 +24,7 @@ export const Navigation = () => {
     { label: "Practice Areas", href: "practice-areas" },
     { label: "Our Team", href: "team" },
     { label: "Clients", href: "clients" },
+    { label: "News", href: "news", isPage: true },
     { label: "Contact", href: "contact" },
   ];
 
