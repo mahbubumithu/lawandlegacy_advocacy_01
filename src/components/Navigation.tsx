@@ -6,6 +6,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,9 +17,18 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (link: { href: string; isPage?: boolean }) => {
     setIsMobileMenuOpen(false);
+    if (link.isPage) {
+      navigate(`/${link.href}`);
+    } else if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(link.href)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document.getElementById(link.href)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const navLinks = [
