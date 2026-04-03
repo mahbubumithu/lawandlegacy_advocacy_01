@@ -28,7 +28,7 @@ const AdminLogin = () => {
         toast({ title: "Invalid password", variant: "destructive" });
       } else {
         sessionStorage.setItem("admin_authenticated", "true");
-        navigate("/admin/events");
+        navigate("/admin");
       }
     } catch {
       toast({ title: "Something went wrong", variant: "destructive" });
