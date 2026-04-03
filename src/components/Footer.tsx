@@ -1,13 +1,14 @@
-import { Scale } from "lucide-react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 export const Footer = () => {
+  const { data: content } = useSiteContent("footer");
+
   return (
     <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              {/* Updated logo size to w-8 h-8 */}
               <div className="w-30 h-30 flex items-center justify-center p-0">
                 <img 
                   src="/logo.png" 
@@ -15,38 +16,20 @@ export const Footer = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-
               <h3 className="text-2xl font-bold"></h3>
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
-              A pre-eminent law firm providing comprehensive legal services across Bangladesh. 
-              We pride ourselves on our commitment to personal service and delivering the very best results for our clients.
+              {content?.description || "A pre-eminent law firm providing comprehensive legal services across Bangladesh."}
             </p>
           </div>
           
           <div>
             <h4 className="font-semibold text-lg mb-4 text-gold">Quick Links</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="#about" className="text-primary-foreground/80 hover:text-gold transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#practice-areas" className="text-primary-foreground/80 hover:text-gold transition-colors">
-                  Practice Areas
-                </a>
-              </li>
-              <li>
-                <a href="#team" className="text-primary-foreground/80 hover:text-gold transition-colors">
-                  Our Team
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-primary-foreground/80 hover:text-gold transition-colors">
-                  Contact Us
-                </a>
-              </li>
+              <li><a href="#about" className="text-primary-foreground/80 hover:text-gold transition-colors">About Us</a></li>
+              <li><a href="#practice-areas" className="text-primary-foreground/80 hover:text-gold transition-colors">Practice Areas</a></li>
+              <li><a href="#team" className="text-primary-foreground/80 hover:text-gold transition-colors">Our Team</a></li>
+              <li><a href="#contact" className="text-primary-foreground/80 hover:text-gold transition-colors">Contact Us</a></li>
             </ul>
           </div>
           
