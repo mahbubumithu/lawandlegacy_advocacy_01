@@ -90,11 +90,18 @@ const AdminEvents = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="flex items-center justify-between mb-8">
             <h1 className="text-3xl font-bold text-foreground">Event Manager</h1>
-            <Link to="/news">
-              <Button variant="outline" size="sm" className="border-gold/30 text-gold hover:bg-gold/10">
-                View News Feed
-              </Button>
-            </Link>
+            <div className="flex gap-2">
+              <Link to="/admin">
+                <Button variant="outline" size="sm" className="border-gold/30 text-gold hover:bg-gold/10">
+                  ← Dashboard
+                </Button>
+              </Link>
+              <Link to="/news">
+                <Button variant="outline" size="sm" className="border-gold/30 text-gold hover:bg-gold/10">
+                  View News Feed
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* Add Event Form */}

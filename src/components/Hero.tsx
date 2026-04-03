@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Scale } from "lucide-react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 export const Hero = () => {
+  const { data: content } = useSiteContent("hero");
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -19,16 +22,15 @@ export const Hero = () => {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground leading-tight">
-            Law & Legacy
+            {content?.title || "Law & Legacy"}
           </h1>
           
           <p className="text-xl md:text-2xl text-primary-foreground/90 font-light">
-            Premier Advocacy Firm in Bangladesh
+            {content?.subtitle || "Premier Advocacy Firm in Bangladesh"}
           </p>
           
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            A new-generation law firm providing comprehensive legal solutions from documentation to litigation, 
-            serving individuals, corporations, and government entities with excellence and integrity.
+            {content?.description || "A new-generation law firm providing comprehensive legal solutions from documentation to litigation, serving individuals, corporations, and government entities with excellence and integrity."}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -38,9 +40,8 @@ export const Hero = () => {
               onClick={() => scrollToSection("contact")}
               className="text-base font-medium"
             >
-              Get Legal Consultation
+              {content?.button_text || "Get Legal Consultation"}
             </Button>
-
           </div>
         </div>
       </div>
